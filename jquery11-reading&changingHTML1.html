@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- attr modifica atributos html -->
+    <script>
+        $(document).ready(function(){
+            document.getElementById("img1").addEventListener("mouseover", cambiar, false);
+            document.getElementById("img1").addEventListener("mouseout", restaurar, false);
+        });
+
+        function cambiar(){
+            $("img").attr("src", "auto2.jpg");
+        }
+
+        function restaurar(){
+            $("img").attr("src", "auto.jpg");
+        }
+    </script>
+</head>
+<body>
+    <img src="auto.jpg" alt="auto" id="img1" height="500px" width="800px">
+</body>
+</html>

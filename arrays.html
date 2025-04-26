@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Usando Arrays</title>
+<link rel="stylesheet" href="css/micss.css">
+<script>
+
+    var articulos = ["Zapatillas", " Camiseta", " pantalon", "calcetines"];
+	
+</script>
+</head>
+
+<body>
+<div class="contenedor">
+  <div class="header">
+    <p class="logo">JavaScript Arrays <i class="mm">Píldoras Informáticas
+     </p>
+  </div>
+  <div class="contenido">
+    <div class="principal">
+      <h1>Manejando Arrays</h1>
+      <script>
+	  
+      document.write("<p> El primer articulo es <strong> " + articulos[0] + "</strong></p>");
+
+      document.write("<p>El ultimo elemento es el <strong>" + articulos[articulos.length-1]+ "</strong></p>");
+		
+      articulos.unshift("Balon"); // Con esto agregamos al principio del array, con push al final
+
+      document.write("<p>" + articulos[0] + "</p>")
+
+      articulos.push(prompt("Introduce un articulo"));
+
+      document.write("<p>" + articulos[articulos.length -1] + "</p>")
+
+      document.write("<p>" + articulos[0] + "<br/>" + articulos[1] + "<br/>" + articulos[2] + "<br/>" + articulos[3] + "<br/>" + articulos[4] + "<br/>" + articulos[5] + "<br/></p>"  )
+		
+		alert("Borraremos el primer elemento");
+    articulos.shift();
+    document.write("<p>" + articulos[0] + "<br/>" + articulos[1] + "<br/>" + articulos[2] + "<br/>" + articulos[3] + "<br/>" + articulos[4] + "<br/></p>");
+
+    alert("Borraremos el ultimo ahora");
+    articulos.pop();
+    document.write("<p>" + articulos[0] + "<br/>" + articulos[1] + "<br/>" + articulos[2] + "<br/>" + articulos[3] + "<br/></p>");
+	  </script>
+     </div>
+  </div>
+  
+</div>
+</body>
+</html>

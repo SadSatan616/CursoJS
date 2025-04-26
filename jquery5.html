@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #banner {
+            background-color: #F00;
+            width: 450px;
+            height: 300px;
+            position: relative;
+            left: 400px;
+            top: 50px;
+            font-size: 36px;
+            text-align: center;
+        }
+
+        img {
+            float: left;
+            margin: 15px;
+            width: 300px;
+            height: 200px;
+        }
+
+        #img1, #img2, #img3, #img4{
+            float: left;
+            margin: 15px;
+            width: 300px;
+            height: 200px;
+            font-size: 36px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // var z=document.getElementById("cerrar");
+
+            // z.addEventListener("click", cerrar_banner, false);
+
+            document.getElementById("cerrar").addEventListener("click", cerrar_banner, false);
+            
+            // document.getElementById("img1").addEventListener("click", carrito, false);
+            var imagenes = document.querySelectorAll("#carrete img");
+
+            for(var i=0;i<imagenes.length;i++){
+                imagenes[i].addEventListener("click", carrito, false);
+            }
+        });
+
+        function cerrar_banner() {
+            $("#banner").remove();
+        }
+
+        function carrito(num){
+            // $("#img1").replaceWith("<div id='sustitucion'>Agregado al carrito</div>");
+            // Devuelve quien ha originado el evento, cual objeto desencadeno, devuelve img1 si presionamos img1
+            if (num.target==img1){
+                $("#img1").replaceWith("<div id='img1'>Agregado al carrito</div>");
+            }
+            if (num.target==img2){
+                $("#img2").replaceWith("<div id='img2'>Agregado al carrito</div>");
+            }
+            if (num.target==img3){
+                $("#img3").replaceWith("<div id='img3'>Agregado al carrito</div>");
+            }
+            if (num.target==img4){
+                $("#img4").replaceWith("<div id='img4'>Agregado al carrito</div>");
+            }
+            
+        }
+    </script>
+</head>
+<!-- remove remueve la etiqueta -->
+<!-- replaceWith reemplaza una etiqueta html por otra -->
+
+<body>
+    <div id="banner">
+        Banner de prueba
+        <p id="cerrar">Cerrar</p>
+    </div>
+    <div id="carrete">
+        <img src="xiaomi.jpeg" alt="xd" id="img1">
+        <img src="auto.jpg" alt="xd" id="img2">
+        <img src="auto2.jpg" alt="xd" id="img3">
+        <img src="auto3.jpg" alt="xd" id="img4">
+    </div>
+</body>
+
+</html>

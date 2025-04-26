@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        body{
+            background-color: #334873;
+            color: #FFF;
+        }
+
+        #principal{
+            width: 60%;
+            margin: auto;
+        }
+
+        a{
+            color: #FFF;
+            font: bold 20px Verdana, Geneva, sans-serif;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("html").dblclick(function(){ //Al poner dentro de html, todo lo que esté en el documento al hacer click va a ejecutar la funcion, en cualquier lugar o elemento
+                alert("Ayyyyyyyyy");
+            });
+
+            $("a").mouseover(function(){
+                var mensaje="<p>Estas pasando el mouse por encima del link</p>";
+                $("#principal").append(mensaje);
+            });
+
+            $("#el_boton").click(function(){
+                $(this).val("Para de hacer click!!");
+            });
+
+            $("#el_campo").focus(function(){
+                $(this).val("Ahora vas a escribir");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="principal">
+        <h1>Introduccion a Eventos</h1>
+        <p><a href="#">Un link</a></p>
+        <form action="#">
+            <fieldset>
+                <legend>Formulario</legend>
+                <p>
+                    <input type="button" value="Un boton" id="el_boton" name="button">
+                </p>
+                <p>
+                    <input type="text" name="textfield" id="el_campo">
+                </p>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

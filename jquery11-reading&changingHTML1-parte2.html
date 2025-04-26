@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            text-align: center;
+            width: 50%;
+            border: none;
+            margin: auto;
+        }
+
+        img{
+            padding: 0 5px;
+        }
+
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var elementos = document.querySelectorAll("img");
+
+            elementos.forEach(e => {e.addEventListener("mouseover", cambiar, false), e.addEventListener("mouseout", restaurar, false)});
+        })
+
+        function cambiar(e){
+            if(e.target == img1){
+                $("#img1").attr("src", "auto.jpg");
+            } else if(e.target == img2){
+                $("#img2").attr("src", "auto2.jpg");
+            } else if(e.target == img3){
+                $("#img3").attr("src", "auto3.jpg");
+            } else if(e.target == img4){
+                $("#img4").attr("src", "xiaomi.jpeg");
+            }
+        }
+
+        function restaurar(e){
+            if(e.target == img1){
+                $("#img1").attr("src", "auto-m.jpg");
+            } else if(e.target == img2){
+                $("#img2").attr("src", "auto2-m.jpg");
+            } else if(e.target == img3){
+                $("#img3").attr("src", "auto3-m.jpg");
+            } else if(e.target == img4){
+                $("#img4").attr("src", "xiaomi-m.jpg");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Galeria de imágenes</h1>
+    <table width="100%" border="0">
+        <tr>
+            <td><img src="auto-m.jpg" alt="" width="300px" height="400px" id="img1"></td>
+            <td><img src="auto2-m.jpg" alt="" width="300px" height="400px" id="img2"></td>
+            <td><img src="auto3-m.jpg" alt="" width="300px" height="400px" id="img3"></td>
+            <td><img src="xiaomi-m.jpg" alt="" width="300px" height="400px" id="img4"></td>
+        </tr>
+    </table>
+</body>
+</html>

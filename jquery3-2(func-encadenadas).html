@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #anuncio {
+            background-color: #000;
+            color: #FFF;
+            font-size: 24px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        // Con JQuery
+        $(document).ready(function(){
+            $("#anuncio").width(500)
+            .height(500)
+            .text("VENDE PENDEJO")
+            .hide()
+            .fadeIn(5000)
+            .fadeOut(5000);
+        });
+    </script>
+</head>
+<body>
+    <div id="anuncio">
+        !Compra¡
+    </div>
+    <!-- <script>
+        // Manera tradicional
+        var anuncio=document.getElementById("anuncio");
+
+        anuncio.style.width="500px";
+        anuncio.style.height="500px";
+        anuncio.innerHTML="Vende!!!!!!";
+    </script> -->
+</body>
+</html>
