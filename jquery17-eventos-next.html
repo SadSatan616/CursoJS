@@ -18,7 +18,7 @@
         }
 
         h3.cerrar{
-            background-image: url(menos.jpg);
+            background-image: url(menos.png);
         }
 
         .respuesta{
@@ -34,6 +34,17 @@
             margin-top: 150px;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $(".respuesta").hide();
+
+            $(".principal h3").click(function(){
+                $(this).toggleClass("cerrar").next().fadeToggle(1000);
+            });
+        });
+    </script>
 </head>
 <body>
     <div>

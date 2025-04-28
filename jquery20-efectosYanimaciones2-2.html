@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu {
+            position: absolute;
+            /* left: -210px; */
+            top: 0px;
+            width: 213px;
+            height: 232px;
+            background-color: #FF9;
+            padding: 15px;
+            transition: left 0.5s ease ;
+        }
+
+        #boton {
+            position: absolute;
+            left: 216px;
+            top: 5px;
+            width: 21px;
+            height: 25px;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .cerrado{
+            left: -210px;
+        }
+
+        .abierto{
+            left: 0px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#boton").click(function(){
+            //    var oculto=$("#menu").css("left");
+            //    if(oculto){
+            //         $("#menu").animate({left: "0px"}, 500);
+            //    } else{
+            //         $("#menu").animate({left: "-210px"}, 500);
+            //    }
+            // });
+
+            $("#boton").click(function(){
+                $("#menu").toggleClass("abierto");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <p style="margin-left: 50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et distinctio at, earum
+        debitis eos quas. Officiis dolores harum deleniti ad architecto quisquam quidem vitae eos et molestias veniam
+        blanditiis iste minus repudiandae modi, quod, aperiam soluta veritatis, sed dolor culpa itaque? Optio
+        reprehenderit architecto aperiam suscipit, iure dolores adipisci aut est, illo qui harum perferendis assumenda
+        nihil neque ipsa, eos cupiditate delectus ducimus accusantium nesciunt distinctio officia fugiat provident.
+        Aspernatur esse placeat repellat numquam perspiciatis, ullam quis eum dignissimos modi molestiae mollitia
+        doloribus! Officia magni hic veniam accusamus in itaque ipsam ut provident ratione dolorum. Excepturi aut vitae
+        officiis? Officiis?</p>
+
+    <p style="margin-left: 50px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam iste quam libero
+        quaerat qui deserunt sed, asperiores mollitia velit rerum exercitationem numquam, dolorum quos consequuntur
+        repellat accusamus. Veniam deserunt est illo repudiandae molestiae asperiores voluptatum velit magni blanditiis
+        hic beatae, reiciendis, consectetur minus sunt modi debitis? Ea distinctio velit, doloribus non tempora rem
+        reprehenderit? Iure ratione incidunt expedita reiciendis a, quo amet voluptatem. Quia reprehenderit nesciunt
+        cumque ducimus exercitationem. Molestias et officia ex, rem enim, eveniet ab ipsa cupiditate nam obcaecati, id
+        nisi aliquam odio nemo illum distinctio laudantium dicta atque ipsum! Optio esse voluptatibus placeat
+        perspiciatis cumque a voluptas.</p>
+
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam iste quam libero
+        quaerat qui deserunt sed, asperiores mollitia velit rerum exercitationem numquam, dolorum quos consequuntur
+        repellat accusamus. Veniam deserunt est illo repudiandae molestiae asperiores voluptatum velit magni blanditiis
+        hic beatae, reiciendis, consectetur minus sunt modi debitis? Ea distinctio velit, doloribus non tempora rem
+        reprehenderit? Iure ratione incidunt expedita reiciendis a, quo amet voluptatem. Quia reprehenderit nesciunt
+        cumque ducimus exercitationem. Molestias et officia ex, rem enim, eveniet ab ipsa cupiditate nam obcaecati, id
+        nisi aliquam odio nemo illum distinctio laudantium dicta atque ipsum! Optio esse voluptatibus placeat
+        perspiciatis cumque a voluptas.</p>
+
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi assumenda cupiditate tempore odio non officia
+        veniam totam dolor vitae similique omnis officiis ea, numquam veritatis asperiores eaque fuga perferendis
+        distinctio a consequuntur provident sapiente hic. Itaque architecto odit dignissimos accusantium consectetur,
+        voluptas blanditiis enim, molestiae laborum deleniti consequatur ad cupiditate beatae repellendus assumenda,
+        omnis vero qui? Libero saepe architecto ut eius hic necessitatibus esse aut illo optio! Aut illum provident
+        itaque harum maiores eligendi excepturi tempore facilis aperiam voluptatem sapiente repellendus quia libero iste
+        sed recusandae cupiditate repellat, explicabo, laboriosam, fugiat unde. Optio quasi ipsum consequatur
+        praesentium nisi consequuntur, excepturi asperiores ex vero officiis similique, doloremque id quo pariatur unde
+        nam facere dignissimos reiciendis est cumque sunt ab voluptatum minima?</p>
+
+    <div id="menu" class="cerrado">
+        <div id="boton">X</div>
+        <p>Opcion A</p>
+        <p>Opcion B</p>
+        <p>Opcion C</p>
+        <p>Opcion D</p>
+    </div>
+</body>
+
+</html>
