@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Fotos con FancyBox</title>
+	<link rel="stylesheet" href="Video52/css/site.css">
+	<!-- FancyBox.net -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+	<script src="https://code.jquery.com/jquery-3.7.1.js"
+		integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			Fancybox.bind("[data-fancybox='gallery']", {
+				// Opciones si deseas personalizar
+			});
+		});
+	</script>
+	<!-- <script> esto es obsoleto para usar FancyBox
+		$(document).ready(function () {
+
+			$("#galeria a").fancybox({
+				overlayColor: "#797e79",
+				overlayOpacity: .6,
+				transitionIn: "elastic",
+				transitionOut: "elastic",
+				titlePosition: "Outside",
+				cyclic: true
+			});
+
+		});
+	</script> -->
+
+</head>
+
+<body>
+
+	<div class="cabecera">
+		<img src="video52/imgs/pildoras_1.png">
+		<p class="logo">Píldoras Informáticas </p>
+	</div>
+
+
+	<div class="contenido">
+		<div class="principal">
+			<h1>Fotos</h1>
+			<div id="galeria">
+				<a data-fancybox="gallery" href="video52/imgs/paisaje1.JPG" title="Bonito paisaje nocturno"><img
+						src="Video52/imgs/paisaje1.JPG" width="70" height="70" alt="Paisaje nocturno"></a>
+				<a data-fancybox="gallery" href="video52/imgs/2.jpg" title="Vacas pasando la vida"><img
+						src="Video52/imgs/2.jpg" width="70" height="70" alt="vacas"></a>
+				<a data-fancybox="gallery" href="video52/imgs/paisaje2.jpg" title="Palemeras al atradecer"><img
+						src="Video52/imgs/paisaje2.jpg" width="70" height="70" alt="Palmeras"></a>
+				<a data-fancybox="gallery" href="video52/imgs/paisaje3.jpg" title="Montañas"><img
+						src="Video52/imgs/paisaje3.jpg" width="70" height="70" alt="Montañas"></a>
+				<a data-fancybox="gallery" href="video52/imgs/3.jpg" title="Pico costero"><img src="Video52/imgs/3.jpg"
+						width="70" height="70" alt="Pico"></a>
+				<a data-fancybox="gallery" href="video52/imgs/paisaje4.jpg" title="Atradecer"><img
+						src="Video52/imgs/paisaje4.jpg" width="70" height="70" alt="atardecer"></a>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+
+</html>

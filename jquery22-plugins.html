@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menu{
+            width: 70;
+            background-color: rgb(110, 138,195);
+            padding: 20px 20px 0 20px;
+            position: absolute;
+            left: -92px;
+            z-index: 100;
+            
+        }
+        #menu img{
+            margin-bottom: 20px;
+            border: 1px solid rgb(0,0,0);
+            display: block;
+        }
+        h1 {
+            text-align: center;
+        }
+        p{
+            margin-left: 150px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#menu").hover(function(){
+                $(this).stop().animate({ //Stop() hace no se pueda pasar muchas veces el mouse por encima y que llame la funcion hasta que termine el efecto
+                    left: "0px"
+                }, 500, "easeInSine"); //Termina animate
+            }, function(){
+                $(this).stop().animate({
+                    left: "-92px"
+                }, 1500, "easeOutBounce");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="menu">
+        <img src="auto.jpg" alt="blue" width="70" height="70">
+        <img src="auto2.jpg" alt="green" width="70" height="70">
+        <img src="auto3.jpg" alt="orange" width="70" height="70">
+        <img src="coche.png" alt="purple" width="70" height="70">
+        <img src="xiaomi.jpeg" alt="red" width="70" height="70">
+        <img src="auto4.jpeg" alt="yellow" width="70" height="70">
+    </div>
+
+    <h1>Menu deslizantes</h1>
+    <p>Pasa el raton por encima de la pestaña de la izquierda</p>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>
+<style>
+
+table{
+	text-align:center;
+	width:50%;
+	border:none;
+	margin:auto;
+}
+
+img{
+	padding:0 5px;
+}
+h1{
+	text-align:center;
+}
+
+</style>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<script>
+
+	$(document).ready(function() {
+		
+		var fotoOver = ["auto.jpg", "auto2.jpg", "auto3.jpg", "xiaomi.jpeg"];
+		
+		var imagenes=[];
+
+		for(var i=0; i<fotoOver.length; i++){
+			imagenes[i] = new Image();
+			imagenes[i].src = fotoOver[i];
+		}
+
+		$("img").each(function() {
+			
+			$(this).hover(cambiar , restaurar);
+            
+        });
+        	
+	function cambiar(e){
+		if(e.target==img1){
+			$("#img1").attr("src", imagenes[0].src);
+		} else if(e.target==img2){
+			$("#img2").attr("src", imagenes[1].src);
+		} else if(e.target==img3){
+			$("#img3").attr("src", imagenes[2].src);
+		} else if(e.target==img4){
+			$("#img4").attr("src", imagenes[3].src);
+		}
+	}
+	
+	function restaurar(e){
+		if(e.target==img1){
+			$("#img1").attr("src", "auto-m.jpg");
+		} else if(e.target==img2){
+			$("#img2").attr("src", "auto2-m.jpg");
+		} else if(e.target==img3){
+			$("#img3").attr("src", "auto3-m.jpg");
+		} else if(e.target==img4){
+			$("#img4").attr("src", "xiaomi-m.jpg");
+		}
+	}
+  });
+</script>
+</head>
+
+<body>
+<h1>Galería de imágenes</h1>
+<table width="100%" border="0">
+  <tr>
+    <td><img src="auto-m.jpg" id="img1" width="300" height="200"></td>
+    <td><img src="auto2-m.jpg" id="img2" width="300" height="200"></td>
+    <td><img src="auto3-m.jpg" id="img3" width="300" height="200"></td>
+    <td><img src="xiaomi-m.jpg" id="img4" width="300" height="200"></td>
+  </tr>
+</table>
+</body>
+</html>
