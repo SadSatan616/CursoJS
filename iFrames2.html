@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Documento sin título</title>
+	<style type="text/css">
+		body {
+			background-color: #06C;
+		}
+
+		h1 {
+			text-align: center;
+			color: #FFF;
+			font-weight: bold;
+		}
+
+		#contenedor {
+			background-color: #06C;
+			width: 500px;
+			height: 400px;
+			margin: auto;
+
+		}
+
+	</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function(){
+			$("#pulsar").click(function(e){
+				e.preventDefault(); //anula el comportamiento por defecto que tiene el link que se pulsa
+				$("#externo").attr("src", "http://www.pildorasinformaticas.es");
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<h1> Píldoras informáticas</h1>
+	<a href="" id="pulsar">Pulsa</a>
+	<div id="contenedor">
+		<iframe id="externo" src="" width="500" height="400" id="externo" frameborder="0" ></iframe>
+	<!-- <img src="auto.jpg" alt="" width="500" height="400"> -->
+		
+	</div>
+
+
+</body>
+
+</html>
