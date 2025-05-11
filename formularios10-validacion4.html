@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Píldoras Informáticas</title>
+    <style>
+        body {
+            background-color: #003366;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #FFCC33;
+            text-align: center;
+        }
+
+        form {
+            background-color: #00224e;
+            padding: 20px;
+            width: 500px;
+            margin: auto;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px;
+        }
+
+        .inline-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        input[type="submit"] {
+            margin-top: 15px;
+            padding: 8px 16px;
+        }
+
+        #form_registro label.error{
+            font-size: 0.8em;
+            color: #F00;
+            font-weight: bold;
+            display: block;
+            /* margin-left: 215px; */
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- JQuery Validation -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#form_registro").validate({
+                rules: {
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    password: {
+                        required: true,
+                        rangelength: [8,16] //Minimo 8 caracteres, max 16
+                    },
+                    confirma: {
+                        equalTo: "#password" //esto hace que el campo confirma tenga la misma validacion que password
+                    }
+                },
+                messages: {
+                    email: {
+                        required: "Introduce email por favor",
+                        email: "El formato es erróneo"
+                    },
+                    password: {
+                        required: "La contraseña es requerida",
+                        rangelength: "Debe contener minimo 8 caracteres y maximo 16."
+                    },
+                    confirma: {
+                        equalTo: "No coinciden los campos"
+                    }
+                },
+                errorPlacement: function(error, element){
+                    if(element.is(":radio") || element.is(":checkbox")){
+                        error.appendTo(element.parent());
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h1>Píldoras informáticas</h1>
+    <hr>
+    <form id="form_registro">
+        <h2 style="color: white;">Rellenar</h2>
+        <table>
+            <tr>
+                <td><label for="nombre">Nombre</label></td>
+                <td><input type="text" id="nombre" name="nombre" required title="Por favor, rellena el nombre"></td>
+            </tr>
+            <tr>
+                <td><label for="email">E-mail</label></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="contra">Contraseña</label></td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="confirma">Confirma Contra</label></td>
+                <td><input type="password" id="confirma" name="confirma"></td>
+            </tr>
+            <tr>
+                <td><label>Aficiones</label></td>
+                <td>
+                    <div class="inline-group">
+                        <input type="checkbox" id="comer" name="aficiones" value="comer" class="required" title="Seleccione almenos un elemento">
+                        <label for="comer">Comer</label>
+                        <input type="checkbox" id="beber" name="aficiones" value="beber">
+                        <label for="beber">Beber</label>
+                        <input type="checkbox" id="dormir" name="aficiones" value="dormir">
+                        <label for="dormir">Dormir</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="fecha">Fecha Nacimiento</label></td>
+                <td><input type="text" id="fecha" name="fecha" class="date" title="Utiliza el formato MM/DD/AAAA"></td>
+            </tr>
+            <tr>
+                <td><label for="planeta">Planeta</label></td>
+                <td>
+                    <select id="planeta" name="planeta" class="required" title="Elige el planeta de nacimiento">
+                        <option>--Por favor, selecciona--</option>
+                        <option value="tierra">tierra</option>
+                        <option value="marte">Marte</option>
+                        <option value="ganimedes">Ganimedes</option>
+                        <option value="no me suena nada">No me suena nada</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="comentarios">Comentarios</label></td>
+                <td><textarea id="comentarios" name="comentarios" rows="4"></textarea></td>
+            </tr>
+            <tr>
+                <td>¿Deseas recibir correo basura de nuestra parte?</td>
+                <td>
+                    <div class="inline-group">
+                        <input type="radio" id="si" name="spam" value="si" class="required" title="Selecciona una opcion">
+                        <label for="si">Sí</label>
+                        <input type="radio" id="por_supuesto" name="spam" value="por_supuesto">
+                        <label for="por_supuesto">Por supuesto</label>
+                        <input type="radio" id="tengo_eleccion" name="spam" value="tengo_eleccion">
+                        <label for="tengo_eleccion">¿Tengo elección?</label>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Enviar">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr>
+
+</body>
+
+</html>

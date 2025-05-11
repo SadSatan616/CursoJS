@@ -31,16 +31,96 @@
   <script>
 
     $(document).ready(function () {
-      $("#comprobar").click(comprobar_datos);
+      // $("#comprobar").click(comprobar_datos);
+      $("#nombre").focus(function(){
+        $(this).val("");
+      });
+
+      $("#apellido").focus(function(){
+        $(this).val("");
+      });
+
+      $("#edad").focus(function(){
+        $(this).val("");
+      });
+
+      // funcion anonima () => {}
+      $("#edad").blur(function(){
+        var edadUsu = $(this).val();
+        if (isNaN(edadUsu)) {
+          alert("Introduce un valor numerico");
+          setTimeout(() => {
+             $(this).focus(); 
+          }, 10);
+          $(this).val("");
+        }
+      });
+
+      $("#form_datos").submit(function(){
+        if ($("#nombre").val() == "" || $("#nombre").val() == "Obligatorio nombre") {
+          alert("Por favor completa el nombre");
+          $("#nombre").focus();
+          return false;
+        }
+      }); 
+      //O sino 
+      // $(":text").focus(function(){
+      //   $(this).attr("value", "");
+      // });
+      $(":radio").click(function(){
+        alert($(this).val());
+      });
+
+      var array = new Array();
+      var arrayPrueba = new Array();
+      var i = 0;
+
+      $(":checkbox").click(function(e){
+        
+       var valor = $(this).val();
+
+       if (arrayPrueba.includes(valor)) {
+        arrayPrueba = arrayPrueba.filter(item => item !== valor);
+       } else {
+        arrayPrueba.push(valor);
+       }
+
+        // arrayPrueba.push($(this).val());
+        
+        
+        // array[i] = $(this).val();
+        // alert($(this).val());
+        // alert("Posicion " + i + " " + array);
+        // $("#las_aficiones").append(array[i]).append("<br>");
+        // i++;
+        alert(arrayPrueba);
+      });
+
+      $("#pais").change(function(){
+        alert("Pais de residencia " + $(this).val());
+      });
+
     });
 
-    function comprobar_datos(){
-      // alert($("#nombre").val());
-      var nombre = $("#nombre").val();
-      var apellido = $("#apellido").val();
-      alert("nombre: " + nombre + ",apellido: " + apellido);
+    // function comprobar_datos() {
+    //   // alert($("#nombre").val());
+    //   // var nombre = $("#nombre").val();
+    //   // var apellido = $("#apellido").val();
+    //   // alert("nombre: " + nombre + ",apellido: " + apellido);
 
-    }
+    //   // $(":text") objeto para acceder a todos los cuadros de texto, TEXT es el valor del atributo type del elemento input
+
+    //   // $(":text").each(function(){
+    //   //   alert($(this).val());
+    //   // });
+    //   if($("#masculino").attr("checked")){
+    //     alert("Eres hombre");
+    //   } else {
+    //     alert("Eres mujer");
+    //   }
+
+    // }
+
   </script>
 </head>
 
@@ -57,11 +137,11 @@
         </tr>
         <tr>
           <td>Apellido:</td>
-          <td><input type="text" name="apellido" id="apellido"></td>
+          <td><input type="text" name="apellido" id="apellido" value="Ingrese apellido"></td>
         </tr>
         <tr>
           <td>Edad:</td>
-          <td><input type="text" name="edad" id="edad"></td>
+          <td><input type="text" name="edad" id="edad" value="Ingrese edad"></td>
         </tr>
         <tr>
           <td>Género:</td>
@@ -124,11 +204,15 @@
           </td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input type="button" value="Comprobar" id="comprobar"></td>
+          <td colspan="2" align="center"><input type="submit" value="Enviar" id="comprobar"></td>
 
         </tr>
       </table>
     </form>
+  </div>
+
+  <div id="las_aficiones">
+
   </div>
 
 </body>
