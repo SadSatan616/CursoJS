@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Login funcional</title>
+	<style>
+		body {
+			font-family: Arial;
+		}
+
+		.formulario {
+			width: 300px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid gray;
+			margin-top: 50px;
+		}
+
+		input {
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 8px;
+		}
+
+		#mensaje {
+			margin-top: 15px;
+			text-align: center;
+			font-weight: bold;
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$("#login").submit(function (e) {
+				e.preventDefault(); // Previene el envío del formulario
+
+				$.get("login.php", {
+					usuario: $("#usuario").val(),
+					contra: $("#contra").val()
+				}, function (respuesta) {
+					if (respuesta.trim() == "autorizado") {
+						$("#mensaje").text("✅ Usuario autorizado. Bienvenido.");
+					} else {
+						$("#mensaje").text("❌ Usuario no autorizado.");
+					}
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+
+	<div class="formulario">
+		<h2>Login</h2>
+		<form id="login">
+			<input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+			<input type="password" name="contra" id="contra" placeholder="Contraseña" required>
+			<input type="submit" value="Ingresar">
+		</form>
+		<div id="mensaje"></div>
+	</div>
+
+</body>
+
+</html>
